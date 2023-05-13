@@ -1,11 +1,12 @@
 import com.qqwing.Difficulty;
 
-import java.text.CollationElementIterator;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 
-public class QQWing_Sudoku {
+public class geneticAlgorithm {
 
     List<Integer> parent1 = new ArrayList<>();
     List<Integer> parent2 = new ArrayList<>();
@@ -59,7 +60,7 @@ public class QQWing_Sudoku {
         return puzzle;
     }
 
-    public List<Integer> population(int[] Sudoku) {
+    public List<Integer> generateChromosome (int[] Sudoku) {
         for (int i = 0; i < 81; i += 9) {
             int[] vecFrec = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -217,7 +218,7 @@ public class QQWing_Sudoku {
 
     public List<Integer> weightedBy(List<List<Integer>> population, int[] sudoku) {
 
-        QQWing_Sudoku people = new QQWing_Sudoku();
+        geneticAlgorithm  people = new geneticAlgorithm ();
         List<Integer> weights = new ArrayList<>();
 
         for (List<Integer> people1 : population)
